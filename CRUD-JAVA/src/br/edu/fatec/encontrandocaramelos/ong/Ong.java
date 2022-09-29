@@ -36,34 +36,35 @@ public class Ong {
     public void showPet() {
         for (Pet pet : this.pets) {
             if (pet != null) {
-                System.out.println("Nome: " + pet.getNome());
-                System.out.println("Idade: " + pet.getIdade());
-                System.out.println("Sexo: " + pet.getSexo());
+                pet.imprimirDados();
             }
         }
     }
 
     //METODO QUE REMOVE UM PET CADASTRADO
     public void removePet(int id) {
-        Pet[] newPet = new Pet[10];
+        Pet[] newPets = new Pet[10];
         for (int i = 0; i < this.pets.length; i++) {
-            if (this.pets[i].getId() != id) {
-                int total = newPet.length;
-                newPet[total] = this.pets[i];
+            if (pets[i] != null && pets[i].getId() != id) {
+                int total = 0;
+                newPets[total] = this.pets[i];
+                total++;
             }
         }
-        this.pets = newPet;
+        this.pets = newPets;
     }
 
     //METODO QUE ATUALIZA UM PET CADASTRADO
     public void updatePet(int id, Pet petAtualizado) {
-        for (Pet pet : this.pets) {
-            if(pet.getId() == id) {
-                pet = petAtualizado;
+        for (int i=0; i < this.pets.length; i++) {
+            if(pets[i] != null && pets[i].getId() == id) {
+                pets[i] = petAtualizado;
                 System.out.println("Seu pet foi atualizado");
+                return;
             }
         }
         System.out.println("O id do pet não foi encontrado");
+
     }
 
     //GETTERS E SETTERS NOME
@@ -112,8 +113,14 @@ public class Ong {
     }
 
     //GETTERS E SETTERS AJUDA
-    public Boolean getAjuda() {
-        return ajuda;
+    public String getAjuda() {
+        String resposta;
+        if (ajuda == true){
+            resposta = "Sim";
+        }else {
+            resposta = "Nao";
+        }
+        return resposta;
     }
 
     public void setAjuda(Boolean ajuda) {
