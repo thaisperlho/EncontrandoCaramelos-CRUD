@@ -12,7 +12,9 @@ public class Pet {
     private boolean vermifugado, vacinado, castrado;
     private String historico;
 
-
+//    public Pet(int id ) {
+//        this.id = id + 1;
+//    }
 
     //GETTERS E SETTERS ID
     public int getId() {
@@ -88,5 +90,18 @@ public class Pet {
     }
     public void setHistorico(String historico) {
         this.historico = historico;
+    }
+
+    public void imprimirDados() {
+        System.out.println("Id: " + getId());
+        System.out.println("Nome: " + getNome());
+        System.out.println("Raça: " + getRaca());
+        System.out.println("Cor: " + getCor());
+        System.out.println("Sexo: " + getSexo());
+        System.out.println("Idade: " + getIdade());
+        System.out.println("Vermifulgado: " + isVermifugado());
+        System.out.println("Vacinado: " + isVacinado());
+        System.out.println("Castrado: " + isCastrado());
+        System.out.println("Historico: " + getHistorico() + "\n");
     }
 }
