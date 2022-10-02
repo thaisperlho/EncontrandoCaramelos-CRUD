@@ -1,4 +1,5 @@
 package br.edu.fatec.encontrandocaramelos.ong.pet;
+import java.util.Arrays;
 
 public class Pet {
 
@@ -10,7 +11,7 @@ public class Pet {
     private String cor;
     private String sexo;
     private int idade;
-    private boolean vermifugado, vacinado, castrado;
+    private Boolean vermifugado, vacinado, castrado;
     private String historico;
 
 
@@ -72,20 +73,50 @@ public class Pet {
     }
 
     //GETTERS E SETTERS VERMIFUGADO, VACINADO E CASTRADO
-    public boolean isVermifugado() {
-        return vermifugado;
+    public String getVermifugado() {
+        String resposta;
+        if(this.vermifugado != null){
+            if (vermifugado == true){
+            resposta = "Sim";
+            }else{
+                resposta = "Nao";
+            }     
+            return resposta;
+        }
+        resposta = "";
+        return resposta;
     }
     public void setVermifugado(boolean vermifugado) {
         this.vermifugado = vermifugado;
     }
-    public boolean isVacinado() {
-        return vacinado;
+    public String getVacinado() {
+        String resposta;
+        if(this.vacinado != null){
+            if (vacinado == true){
+            resposta = "Sim";
+            }else{
+                resposta = "Nao";
+            }     
+            return resposta;
+        }
+        resposta = "";
+        return resposta;
     }
     public void setVacinado(boolean vacinado) {
         this.vacinado = vacinado;
     }
-    public boolean isCastrado() {
-        return castrado;
+    public String getCastrado() {
+        String resposta;
+        if(this.castrado != null){
+            if (castrado == true){
+            resposta = "Sim";
+            }else{
+                resposta = "Nao";
+            }     
+            return resposta;
+        }
+        resposta = "";
+        return resposta;
     }
     public void setCastrado(boolean castrado) {
         this.castrado = castrado;
@@ -108,10 +139,24 @@ public class Pet {
         System.out.println("Cor: " + getCor());
         System.out.println("Sexo: " + getSexo());
         System.out.println("Idade: " + getIdade());
-        System.out.println("Vermifugado: " + isVermifugado());
-        System.out.println("Vacinado: " + isVacinado());
-        System.out.println("Castrado: " + isCastrado());
+        System.out.println("Vermifugado: " + getVermifugado());
+        System.out.println("Vacinado: " + getVacinado());
+        System.out.println("Castrado: " + getCastrado());
         System.out.println("Histórico: " + getHistorico() + "\n");
 
+    }
+
+    //METODO VERIFICAR RESPOSTAS BOOLEAN
+    public Boolean verificarResp(String resp){
+        String sim[] = {"Sim","S","sim","s"};
+        String nao[] = {"Nao","Não","N","nao","não","n"};
+        if (Arrays.asList(sim).contains(resp)){
+            return true;
+        }else if(Arrays.asList(nao).contains(resp)){
+            return false;
+        }else{
+            System.out.println("Resposta inválida! \n");
+            return null;
+        }
     }
 }

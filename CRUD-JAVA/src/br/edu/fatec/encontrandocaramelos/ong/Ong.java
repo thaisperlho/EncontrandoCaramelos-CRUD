@@ -1,5 +1,7 @@
 package br.edu.fatec.encontrandocaramelos.ong;
 
+import java.util.Arrays;
+
 import br.edu.fatec.encontrandocaramelos.ong.pet.Pet;
 
 public class Ong {
@@ -114,11 +116,15 @@ public class Ong {
     //GETTERS E SETTERS AJUDA
     public String getAjuda() {
         String resposta;
-        if (ajuda == true){
+        if(this.ajuda != null){
+            if (ajuda == true){
             resposta = "Sim";
-        }else {
-            resposta = "Nao";
+            }else{
+                resposta = "Nao";
+            }     
+            return resposta;
         }
+        resposta = "";
         return resposta;
     }
 
@@ -136,4 +142,17 @@ public class Ong {
         System.out.println("Ajuda: " + getAjuda() + "\n");
     }
 
+    //METODO VERIFICAR RESPOSTAS BOOLEAN
+    public Boolean verificarResp(String resp){
+        String sim[] = {"Sim","S","sim","s"};
+        String nao[] = {"Nao","Não","N","nao","não","n"};
+        if (Arrays.asList(sim).contains(resp)){
+            return true;
+        }else if(Arrays.asList(nao).contains(resp)){
+            return false;
+        }else{
+            System.out.println("Resposta inválida! \n");
+            return null;
+        }
+    }
 }
