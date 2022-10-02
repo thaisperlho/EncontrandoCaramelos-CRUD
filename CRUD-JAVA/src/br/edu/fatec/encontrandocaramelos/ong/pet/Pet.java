@@ -5,6 +5,7 @@ public class Pet {
     //ATRIBUTOS
     private int id;
     private String nome;
+    private String especie;
     private String raca;
     private String cor;
     private String sexo;
@@ -12,9 +13,7 @@ public class Pet {
     private boolean vermifugado, vacinado, castrado;
     private String historico;
 
-//    public Pet(int id ) {
-//        this.id = id + 1;
-//    }
+
 
     //GETTERS E SETTERS ID
     public int getId() {
@@ -30,6 +29,14 @@ public class Pet {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    //GETTERS E SETTERS ESPECIE
+    public String getEspecie() {
+        return especie;
+    }
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
     //GETTERS E SETTERS RACA
@@ -92,16 +99,19 @@ public class Pet {
         this.historico = historico;
     }
 
+    //MÉTODO IMPRIMIR DADOS
     public void imprimirDados() {
         System.out.println("Id: " + getId());
         System.out.println("Nome: " + getNome());
+        System.out.println("Espécie: "+ getEspecie());
         System.out.println("Raça: " + getRaca());
         System.out.println("Cor: " + getCor());
         System.out.println("Sexo: " + getSexo());
         System.out.println("Idade: " + getIdade());
-        System.out.println("Vermifulgado: " + isVermifugado());
+        System.out.println("Vermifugado: " + isVermifugado());
         System.out.println("Vacinado: " + isVacinado());
         System.out.println("Castrado: " + isCastrado());
-        System.out.println("Historico: " + getHistorico() + "\n");
+        System.out.println("Histórico: " + getHistorico() + "\n");
+
     }
 }

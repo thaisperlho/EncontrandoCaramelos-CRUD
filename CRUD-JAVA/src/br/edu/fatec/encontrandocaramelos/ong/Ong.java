@@ -8,7 +8,7 @@ public class Ong {
     private String nome;
     private String responsavel;
     private String endereco;
-    private int telefone;
+    private String telefone;
     private String email;
     private Boolean ajuda;
 
@@ -43,28 +43,27 @@ public class Ong {
 
     //METODO QUE REMOVE UM PET CADASTRADO
     public void removePet(int id) {
-        Pet[] newPets = new Pet[10];
+        Pet[] newPet = new Pet[10];
         for (int i = 0; i < this.pets.length; i++) {
-            if (pets[i] != null && pets[i].getId() != id) {
+            if (this.pets[i] != null && this.pets[i].getId() != id) {
                 int total = 0;
-                newPets[total] = this.pets[i];
-                total++;
+                newPet[total] = this.pets[i];
+                total ++;
             }
         }
-        this.pets = newPets;
+        this.pets = newPet;
     }
 
     //METODO QUE ATUALIZA UM PET CADASTRADO
     public void updatePet(int id, Pet petAtualizado) {
-        for (int i=0; i < this.pets.length; i++) {
-            if(pets[i] != null && pets[i].getId() == id) {
+        for (int i = 0; i < this.pets.length; i++) {
+            if(pets[i].getId() == id && pets[i] != null) {
                 pets[i] = petAtualizado;
                 System.out.println("Seu pet foi atualizado");
                 return;
             }
         }
         System.out.println("O id do pet não foi encontrado");
-
     }
 
     //GETTERS E SETTERS NOME
@@ -95,11 +94,11 @@ public class Ong {
     }
 
     //GETTERS E SETTERS TELEFONE
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -127,6 +126,7 @@ public class Ong {
         this.ajuda = ajuda;
     }
 
+    //MÉTODO IMPRIMIR DADOS
     public void imprimirDados() {
         System.out.println("Nome da Ong: " + getNome());
         System.out.println("Nome do Responsável: " + getResponsavel());
@@ -135,4 +135,5 @@ public class Ong {
         System.out.println("Email: " + getEmail());
         System.out.println("Ajuda: " + getAjuda() + "\n");
     }
+
 }

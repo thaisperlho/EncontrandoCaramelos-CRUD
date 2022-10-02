@@ -5,28 +5,34 @@ public class Adotante {
     //ATRIBUTOS
     private String nome;
     private String endereco;
-    private int telefone;
+    private String telefone;
     private String email;
 
-
+    //GETTERS E SETTERS NOME
     public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    //GETTERS E SETTERS ENDEREÇO
     public String getEndereco() {
         return endereco;
     }
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public int getTelefone() {
+
+    //GETTERS E SETTERS TELEFONE
+    public String getTelefone() {
         return telefone;
     }
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    //GETTERS E SETTERS EMAIL
     public String getEmail() {
         return email;
     }
@@ -34,6 +40,7 @@ public class Adotante {
         this.email = email;
     }
 
+    //MÉTODO IMPRIMIR DADOS
     public void imprimirDados() {
         System.out.println("Nome: " + getNome());
         System.out.println("Email: " + getEmail());
